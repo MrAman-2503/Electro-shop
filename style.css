@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for ElectroShop */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+#product-list > div {
+    background: white;
+    border-radius: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#product-list > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1.25rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-image:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #4b5563; /* gray-700 */
+    transition: color 0.3s ease;
+}
+
+.product-title:hover {
+    color: #6b21a8; /* purple-700 */
+    cursor: pointer;
+}
+
+.product-price {
+    color: #6b21a8; /* purple-700 */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+button.add-to-cart {
+    background: #6b21a8;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(107,33,168,0.5);
+}
+
+button.add-to-cart:hover {
+    background: #7c3aed; /* purple-500 */
+    box-shadow: 0 4px 12px rgba(124,58,237,0.7);
+}
+
+#product-modal {
+    z-index: 1000;
+}
+
+#modal-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+#modal-content p {
+    margin-bottom: 1rem;
+    color: #4b5563; /* gray-700 */
+}
+
+#modal-content .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #6b21a8;
+    margin-bottom: 1rem;
+}
+
+#modal-content button {
+    background: #6b21a8;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(107,33,168,0.5);
+}
+
+#modal-content button:hover {
+    background: #7c3aed;
+}

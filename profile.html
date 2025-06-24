@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Profile - ElectroShop</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-purple-700 text-white p-4 shadow-md">
+        <h1 class="text-3xl font-bold">User Profile</h1>
+    </header>
+    <main class="container mx-auto p-6">
+        <section class="bg-white rounded shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Profile Picture</h2>
+            <div class="flex items-center space-x-4">
+                <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-full w-32 h-32 object-cover" />
+                <div>
+                    <input type="file" id="upload-pic" accept="image/*" />
+                </div>
+            </div>
+        </section>
+        <section class="bg-white rounded shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">About</h2>
+            <textarea id="about-text" rows="4" class="w-full border rounded p-2" placeholder="Tell us about yourself..."></textarea>
+        </section>
+        <section class="bg-white rounded shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Address</h2>
+            <form id="address-form" class="space-y-4">
+                <input type="text" id="address-line1" placeholder="Address Line 1" class="w-full border rounded p-2" required />
+                <input type="text" id="address-line2" placeholder="Address Line 2" class="w-full border rounded p-2" />
+                <input type="text" id="city" placeholder="City" class="w-full border rounded p-2" required />
+                <input type="text" id="state" placeholder="State" class="w-full border rounded p-2" required />
+                <input type="text" id="zip" placeholder="Zip Code" class="w-full border rounded p-2" required />
+                <button type="submit" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">Save Address</button>
+            </form>
+        </section>
+        <section class="bg-white rounded shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Cart</h2>
+            <div id="user-cart" class="space-y-4">
+                <p>Your cart is empty.</p>
+            </div>
+        </section>
+        <section class="bg-white rounded shadow p-6">
+            <h2 class="text-2xl font-semibold mb-4">My Orders</h2>
+            <div id="user-orders" class="space-y-4">
+                <p>You have no orders yet.</p>
+            </div>
+        </section>
+    </main>
+    <script src="profile.js"></script>
+</body>
+</html>

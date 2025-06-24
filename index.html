@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ElectroShop - Electronic Devices & Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sliding menu bar -->
+    <div id="sliding-menu" class="fixed top-0 left-0 h-full w-64 bg-purple-700 text-white transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="p-4 border-b border-purple-600 flex justify-between items-center">
+            <h2 class="text-xl font-bold">Menu</h2>
+            <button id="menu-close" class="text-white text-2xl font-bold">&times;</button>
+        </div>
+        <ul class="p-4 space-y-4">
+            <li><a href="#" class="block hover:underline">Profile</a></li>
+            <li><a href="#" class="block hover:underline">Settings</a></li>
+            <li><a href="#" class="block hover:underline">Theme</a></li>
+            <li><a href="#" class="block hover:underline">About</a></li>
+        </ul>
+    </div>
+
+    <header class="bg-purple-700 text-white p-4 shadow-md flex justify-between items-center">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">ElectroShop</h1>
+            <button id="menu-toggle" class="text-white text-3xl font-bold md:hidden">&#9776;</button>
+<nav class="hidden md:block relative">
+    <ul class="flex space-x-6 items-center">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#" class="hover:underline">Devices</a></li>
+        <li><a href="#" class="hover:underline">Accessories</a></li>
+        <li><a href="#" class="hover:underline">Cart (<span id="cart-count">0</span>)</a></li>
+        <li>
+            <button id="filter-toggle" class="bg-white text-purple-700 px-3 py-1 rounded hover:bg-purple-100">Filter</button>
+            <div id="filter-panel" class="absolute right-0 mt-2 w-64 bg-white rounded shadow-lg p-4 hidden z-50">
+                <div class="mb-4">
+                    <button id="show-all" class="block w-full text-left px-3 py-1 rounded hover:bg-purple-100">Show All</button>
+                    <button id="show-devices" class="block w-full text-left px-3 py-1 rounded hover:bg-purple-100">Show Devices</button>
+                    <button id="show-accessories" class="block w-full text-left px-3 py-1 rounded hover:bg-purple-100">Show Accessories</button>
+                    <button id="show-laptops" class="block w-full text-left px-3 py-1 rounded hover:bg-purple-100">Show Laptops</button>
+                    <button id="show-earphones" class="block w-full text-left px-3 py-1 rounded hover:bg-purple-100">Show Earphones/Earbuds</button>
+                </div>
+                <label for="price-filter" class="block mb-2 font-semibold text-gray-700">Filter by Price:</label>
+                <input type="range" id="price-filter" min="0" max="1500" step="10" value="1500" class="w-full" />
+                <div class="flex justify-between text-sm text-gray-600 mt-1">
+                    <span>$0</span>
+                    <span id="price-filter-value">$1500</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+        </div>
+    </header>
+
+</div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section>
+            <h2 class="text-3xl font-semibold mb-6">Featured Electronic Devices</h2>
+            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+            <button id="modal-close" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+            <div id="modal-content">
+                <!-- Product details will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

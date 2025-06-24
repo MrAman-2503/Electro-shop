@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ElectroShop - Devices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-purple-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">ElectroShop</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="devices.html" class="hover:underline font-semibold underline">Devices</a></li>
+                    <li><a href="accessories.html" class="hover:underline">Accessories</a></li>
+                    <li><a href="cart.html" class="hover:underline">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section>
+            <h2 class="text-3xl font-semibold mb-6">Electronic Devices</h2>
+            <div id="device-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Device products will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+            <button id="modal-close" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+            <div id="modal-content">
+                <!-- Product details will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter products to only devices and render
+        const deviceList = document.getElementById('device-list');
+        const devices = products.filter(p => p.category === 'device');
+
+        function renderDevices() {
+            deviceList.innerHTML = '';
+            devices.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'cursor-pointer';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image" />
+                    <h3 class="product-title">${product.title}</h3>
+                    <p class="product-price">$${product.price}</p>
+                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                `;
+                deviceList.appendChild(productDiv);
+
+                productDiv.querySelector('img').addEventListener('click', () => openModal(product.id));
+                productDiv.querySelector('.product-title').addEventListener('click', () => openModal(product.id));
+                productDiv.querySelector('button').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    addToCart(product.id);
+                });
+            });
+        }
+
+        renderDevices();
+    </script>
+</body>
+</html>
